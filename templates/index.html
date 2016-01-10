@@ -3,21 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>sslbox</title>
+    <title>SSLBox - Secure file upload and sharing</title>
     <link rel="stylesheet" href="/static/pure-min.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="/static/main.css" media="screen" title="no title" charset="utf-8">
+    <script src="/static/jquery-2.2.0.min.js" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#upload-form').on('submit', function(){
+            $("#submit-button").replaceWith("<div class='loader'>loading ...</div>");
+            return true;
+        });
+      });
+    </script>
   </head>
   <body>
     <div class="card">
       <h2 class="card-title">secure file upload</h2>
-      <form class="pure-form pure-form-stacked" action='/up' method='POST' enctype='multipart/form-data'>
+      <form id="upload-form" class="pure-form pure-form-stacked" action='/up' method='POST' enctype='multipart/form-data'>
         <fieldset>
           <br>
           <div class="upload-control"><input type='file' name='file' required></div>
           <br>
           <br>
           <br>
-          <button type="submit" class="pure-button button-primary">upload file</button>
+          <button type="submit-button" id="submit" class="pure-button button-primary">upload file</button>
         </fieldset>
         <br>
       </form>
