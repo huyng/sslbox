@@ -29,5 +29,6 @@ pip install Flask
 ```
 sudo ./sslbox \
 --cert /etc/letsencrypt/live/www.example.com/fullchain.pem \
---key /etc/letsencrypt/live/www.example.com/privkey.pem
+--key /etc/letsencrypt/live/www.example.com/privkey.pem \
+--upload_folder ./secure_user_uploads
 ```

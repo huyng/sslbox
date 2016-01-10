@@ -11,7 +11,7 @@ parser.add_argument("--host", default="0.0.0.0", help="host address for server t
 parser.add_argument("--port", default=9999, help="port for server to listen on")
 parser.add_argument("--cert", help="path to certification file")
 parser.add_argument("--key", help="path to private key")
-parser.add_argument("--upload_folder", default="user_uploads", help="path to upload folder")
+parser.add_argument("--upload_folder", default="secure_user_uploads", help="path to upload folder")
 
 app = Flask(__name__)
 
