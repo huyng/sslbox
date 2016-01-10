@@ -1,6 +1,6 @@
 # sslbox
 
-Minimal ssl enabled (via letsencrypt) webserver for secure file sharing
+SSLBox is a minimal ssl-enabled webserver for secure file sharing.
 
 ### setup ssl certificates
 
