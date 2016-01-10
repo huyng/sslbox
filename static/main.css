@@ -1,0 +1,33 @@
+html, body {
+  background-color: #F0F5F9;
+  font-family: "Helvetica Neue", "helvetica", sans-serif;
+}
+
+.card {
+  background-color: white;
+  text-align: center;
+  border-radius: 10px;
+  padding: 10px 0px;
+  margin: 100px auto;
+  width: 400px;
+  box-shadow: 0px 0px 6px #90b0b0;
+
+}
+
+.card-title {
+  font-weight:normal;
+  color: #A7A8AA;
+}
+
+.upload-control {
+  background-color: #E0EBF2;
+  color: #505155;
+  padding:10px;
+}
+
+.button-primary {
+  background-color: #5BB290;
+  color:white;
+  border-radius: 4px;
+  border: 1px solid #3Bc2a0;
+}
