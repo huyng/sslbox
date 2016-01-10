@@ -7,11 +7,11 @@ from flask import Flask, request, render_template, redirect, url_for
 from werkzeug import secure_filename
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--host", default="0.0.0.0", help="host address for server to listen on")
-parser.add_argument("--port", default=9999, help="port for server to listen on")
+parser.add_argument("--host", default="0.0.0.0", help="host address for server to listen on (Default: '0.0.0.0')")
+parser.add_argument("--port", default=9999, help="port for server to listen on (Default: 9999)")
 parser.add_argument("--cert", help="path to certification file")
 parser.add_argument("--key", help="path to private key")
-parser.add_argument("--upload_folder", default="secure_user_uploads", help="path to upload folder")
+parser.add_argument("--upload_folder", default="secure_user_uploads", help="path to upload folder (Default: './secure_user_uploads')")
 
 app = Flask(__name__)
 
@@ -44,6 +44,9 @@ def ensure_dir_exists(dpath, mode=0700):
 if __name__ == '__main__':
     args = parser.parse_args()
     ssl_context = (args.cert, args.key) if args.cert and args.key else None
+    if ssl_context is None:
+        print("Warning! SSL Certificates were not specified, running in unsecure mode")
+
     ensure_dir_exists(args.upload_folder)
     app.config['UPLOAD_FOLDER'] = args.upload_folder
     app.run(host=args.host, port=args.port, threaded=True, ssl_context=ssl_context)
