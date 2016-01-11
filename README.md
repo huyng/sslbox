@@ -1,5 +1,3 @@
-<img width="743" alt="screen shot 2016-01-10 at 6 21 55 pm" src="https://cloud.githubusercontent.com/assets/121183/12225813/542961c4-b7c7-11e5-8b65-b889116c6fa1.png">
-
 SSLBox is a minimal ssl-enabled webserver for secure file sharing.
 
 ### setup ssl certificates
